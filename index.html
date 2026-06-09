@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Shriya Tyagi</title>
+<style>
+:root{
+  --bg:#faf9f6;--ink:#141414;--accent:#4515e4;--muted:#6853b9;
+  --border:rgba(20,20,20,.12);--gap:clamp(1.5rem,6vw,5rem);
+  --display:"Arial Narrow",sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --sans:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+}
+@media(prefers-color-scheme:dark){
+  :root{--bg:#090c10;--ink:#d8ecf1;--accent:#4089ff;--muted:#4181ff;--border:rgba(216,236,241,.10)}
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{min-height:100dvh;background:var(--bg);color:var(--ink);font:1rem/1.7 var(--sans);display:flex;flex-direction:column}
+a{color:inherit}
+.w{max-width:calc(min(700px,100%) + var(--gap)*2);padding-inline:var(--gap);margin-inline:auto;width:100%}
+.row{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+
+header{background:var(--bg);border-bottom:1px solid var(--border)}
+header .row{padding-block:1rem}
+.brand{font:700 clamp(1rem,2.2vw,1.25rem)/1 var(--display);text-decoration:none;text-transform:uppercase;transition:color .15s}
+.brand:hover,.nav-link:hover,.nav-link[aria-current]{color:var(--accent)}
+nav{display:flex;gap:clamp(.8rem,2.5vw,1.75rem);align-items:center}
+.nav-link{font:.8rem/1 var(--mono);letter-spacing:.06em;text-decoration:none;color:var(--muted);transition:color .15s}
+
+#main{flex:1}
+
+.hero{padding-block:clamp(3.5rem,11vw,8rem)}
+.hero-name{font:900 clamp(5rem,18vw,12rem)/.88 var(--display);letter-spacing:-.025em;text-transform:uppercase}
+.hero-name em{display:block;font-style:normal;color:var(--accent)}
+.hero-body{margin-top:clamp(1.4rem,4vw,2.2rem);max-width:46ch;font:clamp(.78rem,1.6vw,.9rem)/1.65 var(--mono);color:var(--muted)}
+.hero-body a{color:var(--accent);font-weight:500;text-underline-offset:3px}
+
+.pg{padding-block:clamp(2.5rem,8vw,5.5rem)}
+.pg-title{font:900 clamp(2rem,6vw,4rem)/.9 var(--display);letter-spacing:-.025em;text-transform:uppercase;margin-bottom:clamp(1.5rem,5vw,3rem);padding-bottom:.45em;border-bottom:3px solid var(--accent)}
+
+.article{padding-block:clamp(2rem,7vw,5rem)}
+.back{display:inline-block;font:.8rem/1 var(--mono);letter-spacing:.04em;text-decoration:none;color:var(--muted);margin-bottom:2.2rem;transition:color .15s}
+.back::before{content:'← '}
+.back:hover{color:var(--accent)}
+.article-title{font:900 clamp(1.8rem,4.5vw,3rem)/.95 var(--display);letter-spacing:-.02em;text-transform:uppercase;margin-bottom:clamp(1.5rem,4vw,2.5rem)}
+
+.prose>*+*{margin-top:1rem}
+.prose h1,.prose h2,.prose h3{margin-top:2rem}
+.prose a{color:var(--accent);text-underline-offset:3px}
+.prose ul,.prose ol{padding-left:1.4em}
+.prose blockquote{border-left:2px solid var(--accent);padding-left:1rem;color:var(--muted)}
+.prose code{font-family:var(--mono);font-size:.875em}
+.prose pre{overflow:auto;font-family:var(--mono);font-size:.875em}
+.prose pre code{font-size:1em}
+
+.nf{padding-block:clamp(3rem,10vw,7rem)}
+.nf-num{font:900 clamp(6rem,22vw,15rem)/.85 var(--display);letter-spacing:-.04em;text-transform:uppercase;color:var(--border)}
+.nf p{margin-top:1.5rem;font:clamp(.8rem,1.5vw,.9rem)/1.6 var(--mono);color:var(--muted)}
+.nf a{color:var(--accent)}
+
+footer{border-top:1px solid var(--border);padding-block:1.4rem}
+.foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem 1rem;font:.75rem/1 var(--mono);color:var(--muted)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="w row">
+    <a class="brand" id="brand-link" href="/">Shriya Tyagi</a>
+    <nav aria-label="main">
+      <a class="nav-link" data-route="works" href="#">🪿 works</a>
+      <a class="nav-link" data-route="honks" href="#">🪿 honks</a>
+    </nav>
+  </div>
+</header>
+
+<div id="main"></div>
+
+<footer>
+  <div class="w foot">
+    <span>© 2026 Shriya Tyagi</span>
+    <span>honk.</span>
+  </div>
+</footer>
+
+<script>
+// snarkdown (MIT © Jason Miller) https://github.com/developit/snarkdown
+var e={"":["<em>","</em>"],_:["<strong>","</strong>"],"*":["<strong>","</strong>"],"~":["<s>","</s>"],"\n":["<br />"]," ":["<br />"],"-":["<hr />"]};function n(e){return e.replace(RegExp("^"+(e.match(/^(\t| )+/)||"")[0],"gm"),"")}function r(e){return(e+"").replace(/"/g,"&quot;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}function snarkdown(o,a){var c,s,l,g,u,p=/((?:^|\n+)(?:\n---+|\* \*(?: \*)+)\n)|(?:^``` *(\w*)\n([\s\S]*?)\n```$)|((?:(?:^|\n+)(?:\t|  {2,}).+)+\n*)|((?:(?:^|\n)([>*+-]|\d+\.)\s+.*)+)|(?:!\[([^\]]*?)\]\(([^)]+?)\))|(\[)|(\](?:\(([^)]+?)\))?)|(?:(?:^|\n+)([^\s].*)\n(-{3,}|={3,})(?:\n+|$))|(?:(?:^|\n+)(#{1,6})\s*(.+)(?:\n+|$))|(?:`([^`].*?)`)|(  \n\n*|\n{2,}|__|\*\*|[_*]|~~)/gm,f=[],i="",d=a||{},m=0;function h(n){var r=e[n[1]||""],t=f[f.length-1]==n;return r?r[1]?(t?f.pop():f.push(n),r[0|t]):r[0]:n}function $(){for(var e="";f.length;)e+=h(f[f.length-1]);return e}for(o=o.replace(/^\[(.+?)\]:\s*(.+)$/gm,function(e,n,r){return d[n.toLowerCase()]=r,""}).replace(/^\n+|\n+$/g,"");l=p.exec(o);)s=o.substring(m,l.index),m=p.lastIndex,c=l[0],s.match(/[^\\](\\\\)*\\$/)||((u=l[3]||l[4])?c='<pre class="code '+(l[4]?"poetry":l[2].toLowerCase())+'"><code'+(l[2]?' class="language-'+l[2].toLowerCase()+'"':"")+">"+n(r(u).replace(/^\n+|\n+$/g,""))+"</code></pre>":(u=l[6])?(u.match(/\./)&&(l[5]=l[5].replace(/^\d+/gm,"")),g=snarkdown(n(l[5].replace(/^\s*[>*+.-]/gm,""))),">"==u?u="blockquote":(u=u.match(/\./)?"ol":"ul",g=g.replace(/^(.*)(\n|$)/gm,"<li>$1</li>")),c="<"+u+">"+g+"</"+u+">"):l[8]?c='<img src="'+r(l[8])+'" alt="'+r(l[7])+'">':l[10]?(i=i.replace("<a>",'<a href="'+r(l[11]||d[s.toLowerCase()])+'">'),c=$()+"</a>"):l[9]?c="<a>":l[12]||l[14]?c="<"+(u="h"+(l[14]?l[14].length:l[13]>="="?1:2))+">"+snarkdown(l[12]||l[15],d)+"</"+u+">":l[16]?c="<code>"+r(l[16])+"</code>":(l[17]||l[1])&&(c=h(l[17]||"--"))),i+=s,i+=c;return(i+o.substring(m)+$()).replace(/^\n+|\n+$/g,"")}
+
+const ROUTES=new Set(['works','honks']);
+
+function detectBase(){
+  const segs=location.pathname.split('/').filter(Boolean);
+  const ri=segs.findIndex(s=>ROUTES.has(s));
+  if(ri>0)return '/'+segs.slice(0,ri).join('/')+'/';
+  const src=document.currentScript?.src??'';
+  const m=src.match(/^https?:\/\/[^/]+((?:\/[^/]+)+)\//);
+  if(m)return m[1]+'/';
+  return '/';
+}
+
+const BASE=detectBase();
+document.getElementById('brand-link').href=BASE;
+document.querySelectorAll('.nav-link[data-route]').forEach(a=>{a.href=BASE+a.dataset.route});
+
+const mainEl=document.getElementById('main');
+const navLinks=document.querySelectorAll('.nav-link');
+
+function toRoute(p){const b=BASE.endsWith('/')?BASE.slice(0,-1):BASE;return p.startsWith(b)?p.slice(b.length)||'/':p;}
+function setActive(r){const sec=r.split('/').filter(Boolean)[0]??'';navLinks.forEach(a=>a.toggleAttribute('aria-current',!!sec&&a.dataset.route===sec));}
+function split(md){const[h,...r]=md.split('\n');return{title:h.replace(/^#+\s*/,'').trim(),body:r.join('\n').trimStart()};}
+
+function page(cls,{title,body},back){
+  const backLink=back?`<a class="back" href="${BASE}${back}">${back}</a>`:'';
+  const h=`${title?`<h1 class="${cls==='article'?'article-title':'pg-title'}">${title}</h1>`:''}<div class="prose">${snarkdown(body)}</div>`;
+  return `<div class="w ${cls}">${backLink}${h}</div>`;
+}
+function notFound(path){
+  return `<div class="w nf"><div class="nf-num">404</div><p>Nothing lives at ${path}.&ensp;<a href="${BASE}">Go home →</a></p></div>`;
+}
+
+async function fetchMd(rel){
+  try{const r=await fetch(BASE+rel);return r.ok?r.text():null;}catch{return null;}
+}
+
+async function navigate(pathname){
+  const route=toRoute(pathname);
+  setActive(route);
+  const segs=route.split('/').filter(Boolean);
+  let html,md,s;
+
+  if(segs.length===0){
+    md=await fetchMd('intro.md');
+    if(md){document.title='Shriya Tyagi';const body=md.replace(/^#.*\n?/,'');html=`<div class="w hero"><h1 class="hero-name">Shriya<em>Tyagi</em></h1><div class="hero-body">${snarkdown(body)}</div></div>`;}
+    else{html=notFound(pathname);document.title='404 · Shriya Tyagi';}
+  } else if(segs.length===1){
+    md=await fetchMd(`${segs[0]}/index.md`)??await fetchMd(`${segs[0]}.md`);
+    if(md){s=split(md);document.title=s.title+' · Shriya Tyagi';html=page('pg',s);}
+    else{html=notFound(pathname);document.title='404 · Shriya Tyagi';}
+  } else {
+    md=await fetchMd(`${segs.join('/')}.md`);
+    if(md){s=split(md);document.title=s.title+' · Shriya Tyagi';html=page('article',s,segs[0]);}
+    else{html=notFound(pathname);document.title='404 · Shriya Tyagi';}
+  }
+
+  mainEl.innerHTML=html;
+  window.scrollTo(0,0);
+}
+
+document.addEventListener('click',e=>{
+  const a=e.target.closest('a');
+  if(!a)return;
+  const href=a.getAttribute('href');
+  if(!href||href==='#'||href.startsWith('http')||href.startsWith('//'))return;
+  if(!href.startsWith('/'))return;
+  e.preventDefault();
+  if(href!==location.pathname){history.pushState(null,'',href);navigate(href);}
+});
+
+window.addEventListener('popstate',()=>navigate(location.pathname));
+navigate(location.pathname);
+</script>
+
+</body>
+</html>

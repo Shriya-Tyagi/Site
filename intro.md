@@ -7,4 +7,5 @@ Hi, I'm Shriya, an electrical engineering student at the University of Waterloo.
 I make projects and write sporadically.
 
 [GitHub](url) — code that might compile
+
 [LinkedIn](url) - for updates.

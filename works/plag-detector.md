@@ -28,5 +28,3 @@ Character n-gram TF-IDF generalises better than word-level comparison for detect
 
 ![Code and output side by side, with top match highlighted](./assets/code-output.png)
 ---
-
-[← back to works](/works)

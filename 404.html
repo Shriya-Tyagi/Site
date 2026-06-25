@@ -3,164 +3,194 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Shriya Tyagi</title>
+<title>Styx T.</title>
 <style>
 :root{
-  --bg:#faf9f6;--ink:#141414;--accent:#4515e4;--muted:#6853b9;
-  --border:rgba(20,20,20,.12);--gap:clamp(1.5rem,6vw,5rem);
-  --display:"Arial Narrow",sans-serif;
+  --bg:#faf9f6;--ink:#141414;--accent:#4515e4;--muted:#6b6b6b;
+  --border:rgba(20,20,20,.12);
+  
   --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
   --sans:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
 }
 @media(prefers-color-scheme:dark){
-  :root{--bg:#090c10;--ink:#d8ecf1;--accent:#4089ff;--muted:#4181ff;--border:rgba(216,236,241,.10)}
+  :root{--bg:#0e0e0e;--ink:#e8e8e8;--accent:#4f3eff;--muted:#888;--border:rgba(255,255,255,.10)}
 }
 *{box-sizing:border-box;margin:0;padding:0}
 body{min-height:100dvh;background:var(--bg);color:var(--ink);font:1rem/1.7 var(--sans);display:flex;flex-direction:column}
-a{color:inherit}
-.w{max-width:calc(min(700px,100%) + var(--gap)*2);padding-inline:var(--gap);margin-inline:auto;width:100%}
+a{color:inherit;text-decoration:none}
+img{display:block;width:100%}
+
+.w{max-width:1200px;padding-inline:clamp(1rem,4vw,2.5rem);margin-inline:auto;width:100%}
+.narrow{max-width:700px;padding-inline:clamp(1.2rem,4vw,2.5rem);margin-inline:auto;width:100%}
 .row{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
 
-header{background:var(--bg);border-bottom:1px solid var(--border)}
-header .row{padding-block:1rem}
-.brand{font:700 clamp(1rem,2.2vw,1.25rem)/1 var(--display);text-decoration:none;text-transform:uppercase;transition:color .15s}
-.brand:hover,.nav-link:hover,.nav-link[aria-current]{color:var(--accent)}
+header{background:var(--bg);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:10}
+header .row{padding-block:.85rem}
+.brand{font:700 1.05rem/1 var(--sans);letter-spacing:.01em}
+.brand:hover{color:var(--accent)}
 nav{display:flex;gap:clamp(.8rem,2.5vw,1.75rem);align-items:center}
-.nav-link{font:.8rem/1 var(--mono);letter-spacing:.06em;text-decoration:none;color:var(--muted);transition:color .15s}
+.nav-link{font:.82rem/1 var(--sans);color:var(--muted);transition:color .15s;padding-bottom:2px}
+.nav-link:hover{color:var(--ink)}
+.nav-link[aria-current]{color:var(--ink);border-bottom:2px solid var(--ink)}
 
-#main{flex:1}
+.home{padding-block:clamp(1.5rem,5vw,3rem)}
+.grid{display:grid;grid-template-columns:1fr 2fr 1fr;gap:0}
+.col{display:flex;flex-direction:column}
+.col-left{border-right:1px solid var(--border)}
+.col-center{border-right:1px solid var(--border)}
 
-.hero{padding-block:clamp(3.5rem,11vw,8rem)}
-.hero-name{font:900 clamp(5rem,18vw,12rem)/.88 var(--display);letter-spacing:-.025em;text-transform:uppercase}
-.hero-name em{display:block;font-style:normal;color:var(--accent)}
-.hero-body{margin-top:clamp(1.4rem,4vw,2.2rem);max-width:46ch;font:clamp(.78rem,1.6vw,.9rem)/1.65 var(--mono);color:var(--muted)}
-.hero-body a{color:var(--accent);font-weight:500;text-underline-offset:3px}
+.card{display:flex;flex-direction:column;color:inherit;padding:clamp(1rem,3vw,1.5rem);border-bottom:1px solid var(--border)}
+.card:hover{background:rgba(0,0,0,.025)}
+@media(prefers-color-scheme:dark){.card:hover{background:rgba(255,255,255,.03)}}
+.card:last-child{border-bottom:none}
+.card-thumbn{width:100%;aspect-ratio:16/10;object-fit:cover;filter:grayscale(1);background:var(--border);margin-bottom:.9rem;flex-shrink:0;transition:filter .3s}
+.card-title{font:700 clamp(.95rem,1.8vw,1.1rem)/1.2 var(--sans);letter-spacing:-.01em;margin-bottom:.3rem;transition:color .15s}
+.card:hover .card-thumbn{filter:none}.card:hover .card-title{color:var(--accent)}
+.card-limit{font:.82rem/1.5 var(--sans);color:var(--muted);margin-bottom:.4rem;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-meta{font:.72rem/1 var(--mono);letter-spacing:.05em;color:var(--muted);text-transform:uppercase;margin-top:auto;padding-top:.5rem}
+
+.card--featured{height:100%;padding:0}
+.card--featured .card-thumbn{aspect-ratio:4/3;margin-bottom:0}
+.card--featured .card-body{padding:clamp(1.2rem,3vw,2rem);display:flex;flex-direction:column;flex:1}
+.card--featured .card-title{font-size:clamp(1.3rem,2.8vw,2rem);line-height:1.1;letter-spacing:-.02em;margin-bottom:.6rem}
+.card--featured .card-limit{font-size:clamp(.88rem,1.5vw,1rem);line-height:1.6;-webkit-line-clamp:3}
+.card--featured .card-meta{margin-top:1.2rem}
+
+@media(max-width:720px){
+  .grid{grid-template-columns:1fr}
+  .col-left,.col-center{border-right:none;border-bottom:1px solid var(--border)}
+  .card--featured .card-thumbn{aspect-ratio:16/9}
+}
 
 .pg{padding-block:clamp(2.5rem,8vw,5.5rem)}
-.pg-title{font:900 clamp(2rem,6vw,4rem)/.9 var(--display);letter-spacing:-.025em;text-transform:uppercase;margin-bottom:clamp(1.5rem,5vw,3rem);padding-bottom:.45em;border-bottom:3px solid var(--accent)}
-
+.pg-title{font:700 clamp(2rem,6vw,4rem)/.9 var(--sans);letter-spacing:-.025em;margin-bottom:clamp(1.5rem,5vw,3rem);padding-bottom:.45em;border-bottom:3px solid var(--accent)}
 .article{padding-block:clamp(2rem,7vw,5rem)}
-.back{display:inline-block;font:.8rem/1 var(--mono);letter-spacing:.04em;text-decoration:none;color:var(--muted);margin-bottom:2.2rem;transition:color .15s}
+.back{display:inline-block;font:.8rem/1 var(--mono);letter-spacing:.04em;color:var(--muted);margin-bottom:2.2rem;transition:color .15s}
 .back::before{content:'← '}
 .back:hover{color:var(--accent)}
-.article-title{font:900 clamp(1.8rem,4.5vw,3rem)/.95 var(--display);letter-spacing:-.02em;text-transform:uppercase;margin-bottom:clamp(1.5rem,4vw,2.5rem)}
-
+.article-title{font:700 clamp(1.8rem,4.5vw,3rem)/.95 var(--sans);letter-spacing:-.02em;margin-bottom:clamp(1.5rem,4vw,2.5rem)}
 .prose>*+*{margin-top:1rem}
-.prose h1,.prose h2,.prose h3{margin-top:2rem}
+.prose h1,.prose h2,.prose h3{margin-top:2rem;font-weight:700}
 .prose a{color:var(--accent);text-underline-offset:3px}
 .prose ul,.prose ol{padding-left:1.4em}
 .prose blockquote{border-left:2px solid var(--accent);padding-left:1rem;color:var(--muted)}
 .prose code{font-family:var(--mono);font-size:.875em}
-.prose pre{overflow:auto;font-family:var(--mono);font-size:.875em}
+.prose pre{overflow:auto;font-family:var(--mono);font-size:.875em;padding:1rem;border:1px solid var(--border)}
 .prose pre code{font-size:1em}
 
 .nf{padding-block:clamp(3rem,10vw,7rem)}
-.nf-num{font:900 clamp(6rem,22vw,15rem)/.85 var(--display);letter-spacing:-.04em;text-transform:uppercase;color:var(--border)}
-.nf p{margin-top:1.5rem;font:clamp(.8rem,1.5vw,.9rem)/1.6 var(--mono);color:var(--muted)}
+.nf-num{font:900 clamp(6rem,22vw,15rem)/.85 "Arial Narrow","Arial",sans-serif;letter-spacing:-.04em;text-transform:uppercase;color:var(--border)}
+.nf p{margin-top:1.5rem;font:.9rem/1.6 var(--mono);color:var(--muted)}
 .nf a{color:var(--accent)}
 
-footer{border-top:1px solid var(--border);padding-block:1.4rem}
+footer{border-top:1px solid var(--border);padding-block:1.4rem;margin-top:auto}
 .foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem 1rem;font:.75rem/1 var(--mono);color:var(--muted)}
 </style>
 </head>
 <body>
-
 <header>
   <div class="w row">
-    <a class="brand" id="brand-link" href="/">Shriya Tyagi</a>
+    <a class="brand" href="/">Styx T.</a>
     <nav aria-label="main">
-      <a class="nav-link" data-route="works" href="#">🪿 works</a>
-      <a class="nav-link" data-route="honks" href="#">🪿 honks</a>
+      <a class="nav-link" data-route="works" href="/works">🪿 works</a>
+      <a class="nav-link" data-route="honks" href="/honks">🪿 honks</a>
     </nav>
   </div>
 </header>
-
 <div id="main"></div>
-
 <footer>
-  <div class="w foot">
-    <span>© 2026 Shriya Tyagi</span>
-    <span>honk.</span>
-  </div>
+  <div class="w foot"><span>© 2026 Styx T.</span><span>honk.</span></div>
 </footer>
-
 <script>
-// snarkdown (MIT © Jason Miller) https://github.com/developit/snarkdown
-var e={"":["<em>","</em>"],_:["<strong>","</strong>"],"*":["<strong>","</strong>"],"~":["<s>","</s>"],"\n":["<br />"]," ":["<br />"],"-":["<hr />"]};function n(e){return e.replace(RegExp("^"+(e.match(/^(\t| )+/)||"")[0],"gm"),"")}function r(e){return(e+"").replace(/"/g,"&quot;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}function snarkdown(o,a){var c,s,l,g,u,p=/((?:^|\n+)(?:\n---+|\* \*(?: \*)+)\n)|(?:^``` *(\w*)\n([\s\S]*?)\n```$)|((?:(?:^|\n+)(?:\t|  {2,}).+)+\n*)|((?:(?:^|\n)([>*+-]|\d+\.)\s+.*)+)|(?:!\[([^\]]*?)\]\(([^)]+?)\))|(\[)|(\](?:\(([^)]+?)\))?)|(?:(?:^|\n+)([^\s].*)\n(-{3,}|={3,})(?:\n+|$))|(?:(?:^|\n+)(#{1,6})\s*(.+)(?:\n+|$))|(?:`([^`].*?)`)|(  \n\n*|\n{2,}|__|\*\*|[_*]|~~)/gm,f=[],i="",d=a||{},m=0;function h(n){var r=e[n[1]||""],t=f[f.length-1]==n;return r?r[1]?(t?f.pop():f.push(n),r[0|t]):r[0]:n}function $(){for(var e="";f.length;)e+=h(f[f.length-1]);return e}for(o=o.replace(/^\[(.+?)\]:\s*(.+)$/gm,function(e,n,r){return d[n.toLowerCase()]=r,""}).replace(/^\n+|\n+$/g,"");l=p.exec(o);)s=o.substring(m,l.index),m=p.lastIndex,c=l[0],s.match(/[^\\](\\\\)*\\$/)||((u=l[3]||l[4])?c='<pre class="code '+(l[4]?"poetry":l[2].toLowerCase())+'"><code'+(l[2]?' class="language-'+l[2].toLowerCase()+'"':"")+">"+n(r(u).replace(/^\n+|\n+$/g,""))+"</code></pre>":(u=l[6])?(u.match(/\./)&&(l[5]=l[5].replace(/^\d+/gm,"")),g=snarkdown(n(l[5].replace(/^\s*[>*+.-]/gm,""))),">"==u?u="blockquote":(u=u.match(/\./)?"ol":"ul",g=g.replace(/^(.*)(\n|$)/gm,"<li>$1</li>")),c="<"+u+">"+g+"</"+u+">"):l[8]?c='<img src="'+r(l[8])+'" alt="'+r(l[7])+'">':l[10]?(i=i.replace("<a>",'<a href="'+r(l[11]||d[s.toLowerCase()])+'">'),c=$()+"</a>"):l[9]?c="<a>":l[12]||l[14]?c="<"+(u="h"+(l[14]?l[14].length:l[13]>="="?1:2))+">"+snarkdown(l[12]||l[15],d)+"</"+u+">":l[16]?c="<code>"+r(l[16])+"</code>":(l[17]||l[1])&&(c=h(l[17]||"--"))),i+=s,i+=c;return(i+o.substring(m)+$()).replace(/^\n+|\n+$/g,"")}
+var e={"":["<em>","</em>"],_:["<strong>","</strong>"],"*":["<strong>","</strong>"],"~":["<s>","</s>"],"\n":["<br />"]," ":["<br />"],"-":["<hr />"]};function n(e){return e.replace(RegExp("^"+(e.match(/^(\t| )+/)||"")[0],"gm"),"")}function esc(e){return(e+"").replace(/&/g,"&amp;").replace(/"/g,"&quot;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}function snarkdown(o,a){var c,s,l,g,u,p=/((?:^|\n+)(?:\n---+|\* \*(?: \*)+)\n)|(?:^``` *(\w*)\n([\s\S]*?)\n```$)|((?:(?:^|\n+)(?:\t|  {2,}).+)+\n*)|((?:(?:^|\n)([>*+-]|\d+\.)\s+.*)+)|(?:!\[([^\]]*?)\]\(([^)]+?)\))|(\[)|(\](?:\(([^)]+?)\))?)|(?:(?:^|\n+)([^\s].*)\n(-{3,}|={3,})(?:\n+|$))|(?:(?:^|\n+)(#{1,6})\s*(.+)(?:\n+|$))|(?:`([^`].*?)`)|(  \n\n*|\n{2,}|__|\*\*|[_*]|~~)/gm,f=[],i="",d=a||{},m=0;function h(n){var r=e[n[1]||""],t=f[f.length-1]==n;return r?r[1]?(t?f.pop():f.push(n),r[0|t]):r[0]:n}function $(){for(var e="";f.length;)e+=h(f[f.length-1]);return e}for(o=o.replace(/^\[(.+?)\]:\s*(.+)$/gm,function(e,n,r){return d[n.toLowerCase()]=r,""}).replace(/^\n+|\n+$/g,"");l=p.exec(o);)s=o.substring(m,l.index),m=p.lastIndex,c=l[0],s.match(/[^\\](\\\\)*\\$/)||((u=l[3]||l[4])?c='<pre class="code '+(l[4]?"poetry":l[2].toLowerCase())+'"><code'+(l[2]?' class="language-'+l[2].toLowerCase()+'"':"")+">"+n(esc(u).replace(/^\n+|\n+$/g,""))+"</code></pre>":(u=l[6])?(u.match(/\./)&&(l[5]=l[5].replace(/^\d+/gm,"")),g=snarkdown(n(l[5].replace(/^\s*[>*+.-]/gm,""))),">"==u?u="blockquote":(u=u.match(/\./)?"ol":"ul",g=g.replace(/^(.*)(\n|$)/gm,"<li>$1</li>")),c="<"+u+">"+g+"</"+u+">"):l[8]?c='<img src="'+esc(l[8])+'" alt="'+esc(l[7])+'">':l[10]?(i=i.replace("<a>",'<a href="'+esc(l[11]||d[s.toLowerCase()])+'">'),c=$()+"</a>"):l[9]?c="<a>":l[12]||l[14]?c="<"+(u="h"+(l[14]?l[14].length:l[13]>="="?1:2))+">"+snarkdown(l[12]||l[15],d)+"</"+u+">":l[16]?c="<code>"+esc(l[16])+"</code>":(l[17]||l[1])&&(c=h(l[17]||"--"))),i+=s,i+=c;return(i+o.substring(m)+$()).replace(/^\n+|\n+$/g,"")}
 
-const ROUTES=new Set(['works','honks']);
-
-function detectBase(){
-  const segs=location.pathname.split('/').filter(Boolean);
-  const ri=segs.findIndex(s=>ROUTES.has(s));
-  if(ri>0)return '/'+segs.slice(0,ri).join('/')+'/';
-  const src=document.currentScript?.src??'';
-  const m=src.match(/^https?:\/\/[^/]+((?:\/[^/]+)+)\//);
-  if(m)return m[1]+'/';
-  return '/';
+function parseCard(block){
+  const featured=block.startsWith('!!');
+  const c={featured,img:'',title:'',href:'#',dek:'',date:''};
+  for(const line of block.slice(featured?2:0).split('\n')){
+    const t=line.trim();if(!t)continue;
+    const im=t.match(/^!\[[^\]]*\]\(([^)]+)\)/);if(im){c.img=im[1];continue;}
+    const lm=t.match(/^\[(.+)\]\((.+)\)$/);if(lm){c.title=lm[1];c.href=lm[2];continue;}
+    if(!c.dek){c.dek=t;continue;}
+    if(!c.date){c.date=t;break;}
+  }
+  return c;
 }
 
-const BASE=detectBase();
-document.getElementById('brand-link').href=BASE;
-document.querySelectorAll('.nav-link[data-route]').forEach(a=>{a.href=BASE+a.dataset.route});
-
-const mainEl=document.getElementById('main');
-const navLinks=document.querySelectorAll('.nav-link');
-
-function toRoute(p){const b=BASE.endsWith('/')?BASE.slice(0,-1):BASE;return p.startsWith(b)?p.slice(b.length)||'/':p;}
-function setActive(r){const sec=r.split('/').filter(Boolean)[0]??'';navLinks.forEach(a=>a.toggleAttribute('aria-current',!!sec&&a.dataset.route===sec));}
-function split(md){const[h,...r]=md.split('\n');return{title:h.replace(/^#+\s*/,'').trim(),body:r.join('\n').trimStart()};}
-
-function page(cls,{title,body},back){
-  const backLink=back?`<a class="back" href="${BASE}${back}">${back}</a>`:'';
-  const h=`${title?`<h1 class="${cls==='article'?'article-title':'pg-title'}">${title}</h1>`:''}<div class="prose">${snarkdown(body)}</div>`;
-  return `<div class="w ${cls}">${backLink}${h}</div>`;
-}
-function notFound(path){
-  return `<div class="w nf"><div class="nf-num">404</div><p>Nothing lives at ${path}.&ensp;<a href="${BASE}">Go home →</a></p></div>`;
+function renderCard(c,featured=false){
+  const parts=[c.img?`<img class="card-thumbn" src="${esc(c.img)}" alt="" loading="lazy">`:`<div class="card-thumbn"></div>`];
+  if(featured)parts.push('<div class="card-body">');
+  parts.push(`<span class="card-title">${esc(c.title)}</span>`);
+  if(c.dek)parts.push(`<span class="card-limit">${esc(c.dek)}</span>`);
+  if(c.date)parts.push(`<span class="card-meta">${esc(c.date)}</span>`);
+  if(featured)parts.push('</div>');
+  return `<a class="card${featured?' card--featured':''}" href="${esc(c.href)}">${parts.join('')}</a>`;
 }
 
-async function fetchMd(rel){
-  try{const r=await fetch(BASE+rel);return r.ok?r.text():null;}catch{return null;}
-}
+const main=document.getElementById('main');
+const navLinks=document.querySelectorAll('.nav-link[data-route]');
 
-async function navigate(pathname){
-  const route=toRoute(pathname);
-  setActive(route);
-  const segs=route.split('/').filter(Boolean);
-  let html,md,s;
+async function navigate(path){
+  const segs=path.split('/').filter(Boolean);
+  const sec=segs[0]??'';
+  navLinks.forEach(a=>a.toggleAttribute('aria-current',a.dataset.route===sec));
 
-  if(segs.length===0){
-    md=await fetchMd('intro.md');
-    if(md){document.title='Shriya Tyagi';const body=md.replace(/^#.*\n?/,'');html=`<div class="w hero"><h1 class="hero-name">Shriya<em>Tyagi</em></h1><div class="hero-body">${snarkdown(body)}</div></div>`;}
-    else{html=notFound(pathname);document.title='404 · Shriya Tyagi';}
+  async function get(rel){try{const r=await fetch(rel);return r.ok?r.text():null}catch{return null}}
+
+  let md,html;
+
+  if(!sec){
+    md=await get('/home.md');
+    if(md){
+      document.title='Styx T.';
+      const cards=md.trim().split(/\n{2,}/).map(b=>b.trim()).filter(Boolean).map(parseCard);
+      const feat=cards.find(c=>c.featured), rest=cards.filter(c=>!c.featured);
+      const half=Math.ceil(rest.length/2);
+      html=`<div class="home"><div class="w"><div class="grid">
+        <div class="col col-left">${rest.slice(0,half).map(c=>renderCard(c)).join('')}</div>
+        <div class="col col-center">${feat?renderCard(feat,true):''}</div>
+        <div class="col col-right">${rest.slice(half).map(c=>renderCard(c)).join('')}</div>
+      </div></div></div>`;
+    }
   } else if(segs.length===1){
-    md=await fetchMd(`${segs[0]}/index.md`)??await fetchMd(`${segs[0]}.md`);
-    if(md){s=split(md);document.title=s.title+' · Shriya Tyagi';html=page('pg',s);}
-    else{html=notFound(pathname);document.title='404 · Shriya Tyagi';}
+    md=await get(`/${sec}/index.md`)??await get(`/${sec}.md`);
+    if(md){
+      const nl=md.indexOf('\n');
+      const title=md.slice(0,nl).replace(/^#+\s*/,'').trim();
+      const body=md.slice(nl+1).trimStart();
+      document.title=title+' · Styx T.';
+      html=`<div class="pg"><div class="narrow"><h1 class="pg-title">${esc(title)}</h1><div class="prose">${snarkdown(body)}</div></div></div>`;
+    }
   } else {
-    md=await fetchMd(`${segs.join('/')}.md`);
-    if(md){s=split(md);document.title=s.title+' · Shriya Tyagi';html=page('article',s,segs[0]);}
-    else{html=notFound(pathname);document.title='404 · Shriya Tyagi';}
+    md=await get(`/${segs.join('/')}.md`);
+    if(md){
+      const nl=md.indexOf('\n');
+      const title=md.slice(0,nl).replace(/^#+\s*/,'').trim();
+      const body=md.slice(nl+1).trimStart();
+      document.title=title+' · Styx T.';
+      html=`<div class="article"><div class="narrow"><a class="back" href="/${sec}">${sec}</a><h1 class="article-title">${esc(title)}</h1><div class="prose">${snarkdown(body)}</div></div></div>`;
+    }
   }
 
-  mainEl.innerHTML=html;
-  window.scrollTo(0,0);
+  if(!html){
+    document.title='404 · Styx T.';
+    html=`<div class="nf"><div class="narrow"><div class="nf-num">404</div><p>Nothing lives at <code>${esc(path)}</code>.&ensp;<a href="/">Go home →</a></p></div></div>`;
+  }
+
+  main.innerHTML=html;
+  main.scrollIntoView({block:"start",behavior:"instant"});
 }
 
 document.addEventListener('click',e=>{
-  const a=e.target.closest('a');
+  const a=e.target.closest('a[href]');
   if(!a)return;
   const href=a.getAttribute('href');
-  if(!href||href==='#'||href.startsWith('http')||href.startsWith('//'))return;
-  if(!href.startsWith('/'))return;
+  if(!href||href.startsWith('http')||href.startsWith('//')||href.startsWith('#'))return;
   e.preventDefault();
   if(href!==location.pathname){history.pushState(null,'',href);navigate(href);}
 });
-
 window.addEventListener('popstate',()=>navigate(location.pathname));
 navigate(location.pathname);
 </script>
-
 </body>
 </html>

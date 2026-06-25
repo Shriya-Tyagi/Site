@@ -6,7 +6,7 @@ May 2026
 
 [On Defaults](/works/on-defaults)
 ![](img/defaults.jpg)
-lorem ipsum dolor...
+This is inherited.
 Apr 2026
 
 [Cognicare](/works/cognicare)

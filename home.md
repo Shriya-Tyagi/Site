@@ -11,7 +11,7 @@ Apr 2026
 
 [Cognicare](/works/cognicare)
 ![](img/Cognicare.jpg)
-In various states of doneness.
+Conversation companion. On a Pi.
 Nov 2025
 
 [RC Car](/works/rc-car)
@@ -21,5 +21,5 @@ Sept 2025
 
 [Plagiarism Detector](/works/plag-detector)
 ![](img/plag-detector.jpg)
-A thing.
+A plagiarism detector with privacy.
 Sept 2025

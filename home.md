@@ -5,7 +5,7 @@ How to write a custom clang-tidy check very fast.
 May 2026
 
 [On Defaults](/works/on-defaults)
-![](img/beetle.jpg)
+![](img/placeholder.jpg)
 The quiet tyranny of lorem ipsum thinking.
 Apr 2026
 

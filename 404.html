@@ -90,7 +90,7 @@ footer{border-top:1px solid var(--border);padding-block:1.4rem;margin-top:auto}
 <body>
 <header>
   <div class="w row">
-    <a class="brand" href="/">Styx T.</a>
+    <a class="brand" href="/">Shriya T.</a>
     <nav aria-label="main">
       <a class="nav-link" data-route="works" href="/works">🪿 works</a>
       <a class="nav-link" data-route="honks" href="/honks">🪿 honks</a>
@@ -158,7 +158,7 @@ async function navigate(path){
       const nl=md.indexOf('\n');
       const title=md.slice(0,nl).replace(/^#+\s*/,'').trim();
       const body=md.slice(nl+1).trimStart();
-      document.title=title+' · Styx T.';
+      document.title=title+' · Shriya T.';
       html=`<div class="pg"><div class="narrow"><h1 class="pg-title">${esc(title)}</h1><div class="prose">${snarkdown(body)}</div></div></div>`;
     }
   } else {
@@ -167,7 +167,7 @@ async function navigate(path){
       const nl=md.indexOf('\n');
       const title=md.slice(0,nl).replace(/^#+\s*/,'').trim();
       const body=md.slice(nl+1).trimStart();
-      document.title=title+' · Styx T.';
+      document.title=title+' · Shriya T.';
       html=`<div class="article"><div class="narrow"><a class="back" href="/${sec}">${sec}</a><h1 class="article-title">${esc(title)}</h1><div class="prose">${snarkdown(body)}</div></div></div>`;
     }
   }

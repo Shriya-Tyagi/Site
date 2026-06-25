@@ -14,6 +14,11 @@ Apr 2026
 In various states of doneness.
 Nov 2025
 
+[RC Car](/works/rc-car)
+![](img/rc-car.jpg)
+Built in one hour. Goose mascot.
+Sept 2025
+
 [Plagiarism Detector](/works/plag-detector)
 ![](img/plag-detector.jpg)
 A thing.

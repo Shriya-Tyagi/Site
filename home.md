@@ -1,16 +1,16 @@
 !!
 [Part 1: Your Regex Is Not a Parser](/works/custom-clang-tidy-checks1)
-![](img/beetle.jpg)
+![](img/asttree.jpg)
 How to write a custom clang-tidy check very fast.
 May 2026
 
 [On Defaults](/works/on-defaults)
-![](img/beetle.jpg)
+![](img/defaults.jpg)
 lorem ipsum dolor...
 Apr 2026
 
 [Cognicare](/works/cognicare)
-![](img/cognicare.jpg)
+![](img/Cognicare.jpg)
 In various states of doneness.
 Nov 2025
 

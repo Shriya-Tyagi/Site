@@ -16,7 +16,7 @@ Nov 2025
 
 [RC Car](/works/rc-car)
 ![](img/rc-car.jpg)
-Built in one hour. Goose mascot.
+Built in one hour. Goose mascot: RC Carl.
 Sept 2025
 
 [Plagiarism Detector](/works/plag-detector)

@@ -1,7 +1,7 @@
 !!
 [Part 1: Your Regex Is Not a Parser](/works/custom-clang-tidy-checks1)
-![](img/asttree.jpg)
-How to write a custom clang-tidy check very fast.
+![](img/beetle.jpg)
+How to write a custom clang-tidy check very fast. A better way to de bug.
 May 2026
 
 [On Defaults](/works/on-defaults)

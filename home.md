@@ -1,60 +1,25 @@
-[](/img/beetle.jpg)
+!!
 [Part 1: Your Regex Is Not a Parser](/works/custom-clang-tidy-checks1)
+![](img/placeholder.jpg)
 How to write a custom clang-tidy check very fast.
+May 2026
 
-JUN 15
-[](/img/beetle.jpg)
-[Part 1: Your Regex Is Not a Parser](/works/custom-clang-tidy-checks1)
-How to write a custom clang-tidy check very fast.
+[On Defaults](/works/on-defaults)
+![](img/beetle.jpg)
+The quiet tyranny of lorem ipsum thinking.
+Apr 2026
 
-JUN 15
-[](/img/beetle.jpg)
-[Part 1: Your Regex Is Not a Parser](/works/custom-clang-tidy-checks1)
-How to write a custom clang-tidy check very fast.
-JUN 15
+[Cognicare](/works/cognicare)
+![](img/placeholder.jpg)
+In various states of doneness.
+Nov 2025
 
-[](/img/beetle.jpg)
-[Part 1: Your Regex Is Not a Parser](/works/custom-clang-tidy-checks1)
-How to write a custom clang-tidy check very fast.
-JUN 15
+[Plagiarism Detector](/works/plagiarism-detector)
+![](img/placeholder.jpg)
+A thing.
+Sept 2025
 
-[](/img/beetle.jpg)
-[Part 1: Your Regex Is Not a Parser](/works/custom-clang-tidy-checks1)
-How to write a custom clang-tidy check very fast.
-
-JUN 15
-[](/img/beetle.jpg)
-[Part 1: Your Regex Is Not a Parser](/works/custom-clang-tidy-checks1)
-How to write a custom clang-tidy check very fast.
-
-JUN 15
-[](/img/beetle.jpg)
-[Part 1: Your Regex Is Not a Parser](/works/custom-clang-tidy-checks1)
-How to write a custom clang-tidy check very fast.
-JUN 15
-
-[](/img/beetle.jpg)
-[Part 1: Your Regex Is Not a Parser](/works/custom-clang-tidy-checks1)
-How to write a custom clang-tidy check very fast.
-JUN 15
-
-[](/img/beetle.jpg)
-[Part 1: Your Regex Is Not a Parser](/works/custom-clang-tidy-checks1)
-How to write a custom clang-tidy check very fast.
-
-JUN 15
-[](/img/beetle.jpg)
-[Part 1: Your Regex Is Not a Parser](/works/custom-clang-tidy-checks1)
-How to write a custom clang-tidy check very fast.
-
-JUN 15
-[](/img/beetle.jpg)
-[Part 1: Your Regex Is Not a Parser](/works/custom-clang-tidy-checks1)
-How to write a custom clang-tidy check very fast.
-JUN 15
-
-[](/img/beetle.jpg)
-[Part 1: Your Regex Is Not a Parser](/works/custom-clang-tidy-checks1)
-How to write a custom clang-tidy check very fast.
-JUN 15
-
+[This Site](/works/this-site)
+![](img/placeholder.jpg)
+The snake eating its own tail.
+2026

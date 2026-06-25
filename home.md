@@ -9,12 +9,12 @@ May 2026
 The quiet tyranny of lorem ipsum thinking.
 Apr 2026
 
-[Cognicare](/works/cognicare)
+[Cognicare](/works/cognicare.md)
 ![](img/cognicare.jpg)
 In various states of doneness.
 Nov 2025
 
-[Plagiarism Detector](/works/plagiarism-detector)
-![](img/beetle.jpg)
+[Plagiarism Detector](/works/plag-detector)
+![](img/plag-detector.jpg)
 A thing.
 Sept 2025

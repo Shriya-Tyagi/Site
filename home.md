@@ -6,10 +6,10 @@ May 2026
 
 [On Defaults](/works/on-defaults)
 ![](img/beetle.jpg)
-The quiet tyranny of lorem ipsum thinking.
+lorem ipsum dolor...
 Apr 2026
 
-[Cognicare](/works/cognicare.md)
+[Cognicare](/works/cognicare)
 ![](img/cognicare.jpg)
 In various states of doneness.
 Nov 2025

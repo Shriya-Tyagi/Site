@@ -10,7 +10,7 @@ The quiet tyranny of lorem ipsum thinking.
 Apr 2026
 
 [Cognicare](/works/cognicare)
-![](img/beetle.jpg)
+![](img/cognicare.jpg)
 In various states of doneness.
 Nov 2025
 
